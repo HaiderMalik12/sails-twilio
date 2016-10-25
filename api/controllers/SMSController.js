@@ -1,3 +1,4 @@
+"use strict";
 
 module.exports= {
 
@@ -8,8 +9,6 @@ module.exports= {
     const AUTH_TOKEN = "e8c349ce4565ed327b1cc473ed193b11";
     const client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
    
-
-    let mediaUrl = '';
 
     if(!req.param('to')){
     return res.badRequest({err:'Invalid to field,Please provide destination phone number.Format with a '+' and country code e.g., +16175551212 (E.164 format).',status:400});
