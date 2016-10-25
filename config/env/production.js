@@ -37,5 +37,6 @@ module.exports = {
 
   port:process.env.PORT || 1337,
   hookTime:30000,
+  host:'https://salty-lake-18316.herokuapp.com'
 
 };
