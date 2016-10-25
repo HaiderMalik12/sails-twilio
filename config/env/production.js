@@ -35,6 +35,7 @@ module.exports = {
   //   level: "silent"
   // }
 
-  port:process.env.PORT || 1337
+  port:process.env.PORT || 1337,
+  hookTime:30000,
 
 };
