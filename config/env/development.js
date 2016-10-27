@@ -11,16 +11,34 @@
  */
 
 module.exports = {
-
   /***************************************************************************
    * Set the default database connection for models in the development       *
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
 
-  port:1337
+  connections: {
 
+    mysqlServer: {
+      adapter: 'sails-mysql',
+      user: 'root',
+      password: 'root',
+      database: 'sms_api',
+      port:3306,
+      host  : '127.0.0.1'
+      //socketPath : '/tmp/mysql.sock'
+    }
+
+
+  },
+
+
+  models: {
+    connection: 'mysqlServer'
+  },
+
+  port: 1337,
+  //LOG_QUERIES: 'true',
+   //hookTimeout: 30000
+  //180000
 };

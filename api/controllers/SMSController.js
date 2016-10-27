@@ -37,6 +37,19 @@ module.exports= {
     });
 
 
-  }
+  },
+  getSmS:function(req,res){
+
+    const ACCOUNT_SID = 'AC7a149295673ec73c1fda0bca44fbee5f';
+    const AUTH_TOKEN = "e8c349ce4565ed327b1cc473ed193b11";
+    const client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
+
+    var twilio = require('twilio');
+    var twiml = new twilio.TwimlResponse();
+    twiml.message('The Robots are coming! Head for the hills!');
+    return res.ok(twiml.toString());
+
+}
+  
 }
 

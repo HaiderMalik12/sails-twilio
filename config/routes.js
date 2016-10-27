@@ -37,6 +37,7 @@ module.exports.routes = {
   }
    ,
   'POST /send-sms': 'SMSController.sendSms',
+  'GET /sms': 'SMSController.getSmS',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
