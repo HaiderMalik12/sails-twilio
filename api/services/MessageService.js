@@ -13,9 +13,11 @@ module.exports = {
        //extract username
        //extract password
        //extract message
+       let {message,sender,mobile} = options;
        //extract sender
        //extract mobile
 
+      return {message,sender,mobile,username:sails.config.DE_CONFIG.USERNAME,password:sails.config.DE_CONFIG.PASSWORD};
        //call axois post request
 
        //return promise 

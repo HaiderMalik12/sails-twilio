@@ -97,11 +97,13 @@ send:function(req,res){
 
  //call send sms method from MessageService
 
+ return res.ok(MessageService
+     .send({message:params.message,sender:params.sender,mobile:params.mobile}));
+
  //If message failded then you have to update Status.FAILED
 
  //If message sent successfull you have to update status to SENT
-  
-  return res.ok(messageUser);
+
 
  //Send back to Response Message has been
  //created successfully your message_id is

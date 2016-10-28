@@ -32,6 +32,10 @@ module.exports = {
 
   },
 
+  DE_CONFIG:{
+    USERNAME:'923430051240',
+    PASSWORD:9184
+  },
 
   models: {
     connection: 'mysqlServer'
