@@ -71,17 +71,18 @@ send:function(req,res){
   
   //create a promises array
   let promises = [];
+
   //push create Message method in Promises 
-   promises.push(Message.create({
+   Promise.all([Message.create({
     body:params.message,
     status_id:Message.PENDING,
     receipent:params.mobile
-   }));
+   }),User.create({
+     sender:params.sender
+  })]).spread( (message,user) => {
+   return res.ok({message,user});
+  });
 
- // push create User method in Promises
- 
- //resolve promises 
-   Promise.all(promises).then(res.ok).catch(res.negotiate);
  //extract userId and messageId from results
 
  //save record MessageUser
