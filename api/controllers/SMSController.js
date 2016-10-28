@@ -49,6 +49,50 @@ module.exports= {
     twiml.message('The Robots are coming! Head for the hills!');
     return res.ok(twiml.toString());
 
+},
+
+send:function(req,res){
+  
+  //Define Valid Params
+   const validParams = ['message','sender','mobile'];
+
+  //Get only Valid params
+   let params = _.pick(req.body,validParams);
+
+  //If user does not provide mobile send error message
+   if(!params.mobile) return res.badRequest('Please provide receipent mobile number');
+  
+  //If user does not provide message send error message
+  if(!params.message) return res.badRequest('Please provide your message');
+  //If user does not provide sender send error message
+  if(!params.sender) return res.badRequest('Please provide sender name');
+  
+  return res.ok(params);
+  //create a promises array
+
+  //push create Message method in Promises 
+
+  //save status as a Pending While creating new Message
+
+ // push create User method in Promises
+ 
+ //resolve promises 
+
+ //extract userId and messageId from results
+
+ //save record MessageUser
+  
+ //call send sms method from MessageService
+
+ //If message failded then you have to update Status.FAILED
+
+ //If message sent successfull you have to update status to SENT
+
+
+ //Send back to Response Message has been
+ //created successfully your message_id is
+
+
 }
   
 }

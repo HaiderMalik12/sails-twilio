@@ -9,11 +9,11 @@ module.exports = {
 
   attributes: {
 
-    name : { type: 'text' },
+     sender:{type:'text',required:true},
+     
+     status_id : { type: 'integer' },
 
-    status_id : { type: 'integer' },
-
-    message_user : { type: 'collection' , via: 'user' }
+     message_user : { type: 'collection' , via: 'user' }
   }
 };
 

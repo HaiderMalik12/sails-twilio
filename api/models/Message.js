@@ -9,11 +9,15 @@ module.exports = {
 
   attributes: {
 
-    body : { type: 'text' },
+     body : { type: 'text' },
 
-    status_id : { type: 'integer' },
+     status_id : { type: 'integer' },
 
-    message_user : { type: 'collection' , via : 'message' }
+     recipent: {type:'integer',required:true},
+
+    message_user : { type: 'collection' , via : 'message' },
+    
+    success_msg_id:{type:'integer'}
   }
 };
 

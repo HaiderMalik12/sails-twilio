@@ -36,8 +36,11 @@ module.exports.routes = {
     view: 'homepage'
   }
    ,
+
+   //SMS
   'POST /send-sms': 'SMSController.sendSms',
   'GET /sms': 'SMSController.getSmS',
+   'POST /send':'SMSController.send'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
