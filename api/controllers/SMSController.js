@@ -80,23 +80,32 @@ send:function(req,res){
    }),User.create({
      sender:params.sender
   })]).spread( (message,user) => {
-   return res.ok({message,user});
-  });
-
+   
+   if(!message || !user) return res.negotiate({err:'Unable to Create Record'});
+   
  //extract userId and messageId from results
+  let userId = user.id,
+      messageId =message.id;
 
  //save record MessageUser
-  
+  return MessageUser.create({
+    user:userId,
+    message:messageId
+  });  
+
+}).then(messageUser =>{
+
  //call send sms method from MessageService
 
  //If message failded then you have to update Status.FAILED
 
  //If message sent successfull you have to update status to SENT
-
+  
+  return res.ok(messageUser);
 
  //Send back to Response Message has been
  //created successfully your message_id is
-
+}).catch(res.negotiate);
 
 }
   
