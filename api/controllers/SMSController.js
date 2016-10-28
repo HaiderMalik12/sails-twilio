@@ -53,6 +53,8 @@ module.exports= {
 
 send:function(req,res){
   
+   const Promise = require('bluebird');
+
   //Define Valid Params
    const validParams = ['message','sender','mobile'];
 
@@ -67,17 +69,19 @@ send:function(req,res){
   //If user does not provide sender send error message
   if(!params.sender) return res.badRequest('Please provide sender name');
   
-  return res.ok(params);
   //create a promises array
-
+  let promises = [];
   //push create Message method in Promises 
-
-  //save status as a Pending While creating new Message
+   promises.push(Message.create({
+    body:params.message,
+    status_id:Message.PENDING,
+    receipent:params.mobile
+   }));
 
  // push create User method in Promises
  
  //resolve promises 
-
+   Promise.all(promises).then(res.ok).catch(res.negotiate);
  //extract userId and messageId from results
 
  //save record MessageUser

@@ -7,13 +7,18 @@
 
 module.exports = {
 
+ 	SENT : 3,
+  PENDING:1,
+  FAILED:4,
+  LIVE:5,
   attributes: {
+ 
 
-     body : { type: 'text' },
+     body : { type: 'string' },
 
      status_id : { type: 'integer' },
 
-     recipent: {type:'integer',required:true},
+     receipent: {type:'string',required:true},
 
     message_user : { type: 'collection' , via : 'message' },
     
