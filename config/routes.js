@@ -40,7 +40,10 @@ module.exports.routes = {
    //SMS
   'POST /send-sms': 'SMSController.sendSms',
   'GET /sms': 'SMSController.getSmS',
-   'POST /send':'SMSController.send'
+   'POST /send':'SMSController.send',
+
+ //Party
+  'POST /party':'PartyController.create'  
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

@@ -17,10 +17,12 @@ module.exports = {
      body : { type: 'string' },
 
      status_id : { type: 'integer' },
+     
+     to:{type:'string'},
 
-     receipent: {type:'string',required:true},
+     from: {type:'string',required:true},
 
-    message_user : { type: 'collection' , via : 'message' },
+     message_user : { type: 'collection' , via : 'message' },
     
     success_msg_id:{type:'integer'}
   }

@@ -97,8 +97,8 @@ send:function(req,res){
 
  //call send sms method from MessageService
 
- return res.ok(MessageService
-     .send({message:params.message,sender:params.sender,mobile:params.mobile}));
+ MessageService
+     .send({message:params.message,sender:params.sender,mobile:params.mobile}).then(res.ok).catch(res.negotiate);
 
  //If message failded then you have to update Status.FAILED
 
