@@ -41,7 +41,7 @@ module.exports = {
     connection: 'mysqlServer'
   },
 
-  port: 1337,
+  port: process.env.PORT ||1337,
   //LOG_QUERIES: 'true',
    //hookTimeout: 30000
   //180000

@@ -1,7 +1,7 @@
 /**
- * Production environment settings
+ * Development environment settings
  *
- * This file can include shared settings for a production environment,
+ * This file can include shared settings for a development team,
  * such as API keys or remote database passwords.  If you're using
  * a version control solution for your Sails app, this file will
  * be committed to your repository unless you add it to your .gitignore
@@ -11,32 +11,38 @@
  */
 
 module.exports = {
-
   /***************************************************************************
-   * Set the default database connection for models in the production        *
+   * Set the default database connection for models in the development       *
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
 
-  /***************************************************************************
-   * Set the port in the production environment to 80                        *
-   ***************************************************************************/
+  connections: {
 
-  // port: 80,
+    mysqlServer: {
+      adapter: 'sails-mysql',
+      user: 'root',
+      password: 'root',
+      database: 'sms_api',
+      port:3306,
+      host  : '127.0.0.1'
+      //socketPath : '/tmp/mysql.sock'
+    }
 
-  /***************************************************************************
-   * Set the log level in production environment to "silent"                 *
-   ***************************************************************************/
 
-  // log: {
-  //   level: "silent"
-  // }
+  },
 
-  port:process.env.PORT || 1337,
-  hookTime:30000,
-  host:'https://salty-lake-18316.herokuapp.com'
+  DE_CONFIG:{
+    USERNAME:'923430051240',
+    PASSWORD:9184
+  },
 
+  models: {
+    connection: 'mysqlServer'
+  },
+
+  port: process.env.PORT ||1337,
+  //LOG_QUERIES: 'true',
+   //hookTimeout: 30000
+  //180000
 };
