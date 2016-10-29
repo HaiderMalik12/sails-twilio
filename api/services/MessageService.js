@@ -9,7 +9,9 @@ module.exports = {
 	send:function(options){
 
 		const axios = require('axios');
-       let {to,body,from} = options;
+       let to =options.to,
+       body=options.body
+       from= options.from;
 
     //  return axios
     //  //.post(`http://sendpk.com/api/sms.php?username=${sails.config.DE_CONFIG.USERNAME}&password=${sails.config.DE_CONFIG.PASSWORD}&mobile=${mobile}&sender=${sender}&message=${message}`);
