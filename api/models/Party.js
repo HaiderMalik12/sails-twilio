@@ -20,10 +20,15 @@ module.exports = {
       type:'integer'
     },
     balance:{
-      type:'integer'
+      type:'integer',
+      defaultsTo:0
     },
+
+    //Associations
     party_type:{
-      type:'string'
+      model:'partytype',
+      required:true,
+      columnName:'party_type_id'
     },
     party_purchase_items:{
       collection:'partypurchaseitems',

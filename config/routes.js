@@ -43,7 +43,34 @@ module.exports.routes = {
    'POST /send':'SMSController.send',
 
  //Party
-  'POST /party':'PartyController.create'  
+  'POST /party':'PartyController.create' ,
+
+  // // 'GET /party/:id': {
+  //       controller: 'PartyController',
+  //       action: 'findOne',
+  //       skipAssets: 'true',
+  //       //swagger path object
+  //       swagger: {
+  //           methods: ['GET', 'POST'],
+  //           summary: ' Get All Parties ',
+  //           description: 'Get Party description',
+  //           produces: [
+  //               'application/json'
+  //           ],
+  //           tags: [
+  //               'Parties'
+  //           ],
+  //           responses: {
+  //               '200': {
+  //                   description: 'List of Parties',
+  //                   schema: 'Party', // api/model/Group.js,
+  //                   type: 'array'
+  //               }
+  //           },
+  //           parameters: []
+
+  //       }
+   // } 
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
