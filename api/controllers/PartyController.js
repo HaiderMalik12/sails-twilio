@@ -63,6 +63,21 @@ module.exports ={
   }
 
   Party.update({id},attributes).then(res.ok).catch(res.negotiate);
+ },
+ delete:function(req,res){
+
+     let id = req.params.id;
+
+     Party.update({id},{status_id:Status.DELETED}).then( () =>{
+         res.ok({msg:`Party with this ${id} is deleted successfully!`});
+     }).catch(res.negotiate);
+    
+
+ },
+ findAll:function(req,res){
+
+     //Required pagination stuff
+     Party.find({status_id:{'!':Status.DELETED}}).then(res.ok).catch(res.negotiate);
  }
 
 }
