@@ -44,6 +44,8 @@ module.exports.routes = {
 
  //Party
   'POST /party':'PartyController.create' ,
+  'GET /party/:id':'PartyController.findOne',
+  'PUT /party/:id':'PartyController.update'
 
   // // 'GET /party/:id': {
   //       controller: 'PartyController',
